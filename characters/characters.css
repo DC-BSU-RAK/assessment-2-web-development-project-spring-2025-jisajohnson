@@ -1,0 +1,134 @@
+/* Root helps in giving each element it's designated color  */
+:root {
+    --anemo: #74c2a8;
+    --geo: #fab632;
+    --electro: #af8ec1;
+    --dendro: #a5c83b;
+    --hydro: #4cc2f1;
+    --pyro: #ef7a35;
+    --cryo: #9fd6e3;
+} 
+
+/* Changes the default settings */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: url('../images\ &\ videos/genshin_cursor.png'), auto;
+}
+
+/* giving margin to the top and changing the text color of main */
+main{
+    margin-top: 100px;
+    color: white;
+}
+
+/* aligning the heading tag and giving margin to the bottom */
+h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* adding the css grid, 4 equal coloumn and giving gap */
+.Mondstadt-characters{
+    display: grid;
+    grid-template-columns: auto auto auto auto; 
+    gap: 24px;
+}
+
+/* Bg color, curvy border and shadow for the box */
+.character-box {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures that image doesn't go out of the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; /* for smooth transition*/
+}
+
+/* the box moves up when hovered */
+.character-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Padding for the info */
+.character-info {
+    padding: 16px;
+}
+
+/* Gives font size and makes the font look bold also bottom margin */
+.character-name {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* adds styles for the vision, so it looks like it's inside a box*/
+.character-vision {
+    display: inline-block;
+    padding: 4px 8px; 
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: white;
+}
+
+/* giving background colour to the character vision using the root */
+.anemo { background-color: var(--anemo); }
+.geo { background-color: var(--geo); }
+.electro { background-color: var(--electro); }
+.dendro { background-color: var(--dendro); }
+.hydro { background-color: var(--hydro); }
+.pyro { background-color: var(--pyro); }
+.cryo { background-color: var(--cryo); }
+
+/* The font size and text color of the description */
+.character-description {
+    font-size: 14px;
+    color: white;
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    /* reducing the space between the nav and main */
+    main{
+        margin: 40px;
+    }
+
+    /* giving bottom space to the logo  */
+    .logo {
+        margin-bottom: 10px;
+    }
+    
+    /* changes the grid layout to one card */
+    .Mondstadt-characters {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    
+    /* in mobile it will be one character in a row */
+    .character-box {
+        max-width: 100%;
+    }
+    
+    /* the image width will be full but the height is given automatically */
+    .character-box img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* spacing between the description and image */
+    .character-info {
+        padding: 12px;
+    }
+    
+    /* Font size is smaller for the heading */
+    .character-name {
+        font-size: 20px;
+    }
+    
+    /* Font size is made small for the description as well */
+    .character-description {
+        font-size: 15px;
+    }
+}
