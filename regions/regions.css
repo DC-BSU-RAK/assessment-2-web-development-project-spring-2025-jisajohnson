@@ -1,0 +1,65 @@
+/* Aligning the text to the center */
+body{
+    text-align: center;
+}
+
+/* position is set and the text colour is white */
+.Mondstadt, 
+.Liyue, 
+.Inazuma, 
+.Sumeru, 
+.Fontaine, 
+.Natlan{
+  position: relative;
+  color: white;
+}
+
+/* This is for the black transparent overlay to make the text and bg image seen */
+.overlay{
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  opacity:1;
+}
+
+/* to make the text in the center and to bring the text infront of the bg image */
+.mondstadt-description,
+.liyue-description, 
+.inazuma-description, 
+.sumeru-description, 
+.fontaine-description, 
+.natlan-description{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  /* The height and width of the symbols are decreased */
+  .mondstadt-description img, 
+  .liyue-description img, 
+  .inazuma-description img, 
+  .sumeru-description img, 
+  .fontaine-description img, 
+  .natlan-description img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  /* the size of text looks smaller in mobile */
+  .mondstadt-description, 
+  .liyue-description, 
+  .inazuma-description, 
+  .sumeru-description, 
+  .fontaine-description, 
+  .natlan-description {
+    width: 90%;
+    padding: 10px;
+    font-size: 10px;
+  }
+}
